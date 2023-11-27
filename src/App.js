@@ -43,10 +43,11 @@ function App() {
           type: "value",
         },
         tooltip: {
-          trigger: "axis", // Show tooltip on hovering over data points
+          trigger: "axis",
           formatter: function (params) {
-            const price = params[0].value; // Get the price value
-            return `Price: ${price}`; // Format tooltip content
+            const price = params[0].value;
+            const time = params[0].axisValueLabel; // Get the formatted time from axis label
+            return `Price: ${price}<br />Date: ${time}`; // Display both time and price in tooltip
           },
         },
         series: [
@@ -94,7 +95,8 @@ function App() {
           trigger: "axis",
           formatter: function (params) {
             const price = params[0].value;
-            return `Price: ${price}`;
+            const time = params[0].axisValueLabel; // Get the formatted time from axis label
+            return `Price: ${price}<br />Date: ${time}`; // Display both time and price in tooltip
           },
         },
         series: [
@@ -142,7 +144,8 @@ function App() {
           trigger: "axis",
           formatter: function (params) {
             const price = params[0].value;
-            return `Price: ${price}`;
+            const time = params[0].axisValueLabel; // Get the formatted time from axis label
+            return `Price: ${price}<br />Date: ${time}`; // Display both time and price in tooltip
           },
         },
         series: [
